@@ -3,32 +3,32 @@ package task1;
 import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         float result = userInput();
-        System.out.printf("Вы ввели число %f", result);
+        System.out.printf("Вы ввели число %.1f", result);
     }
 
-    public static float userInput(){
+    public static float userInput() {
         Scanner input = new Scanner(System.in);
         boolean isNotGetted = true;
         float res = 0.0f;
 
-        while (isNotGetted){
+        while (isNotGetted) {
             System.out.println("-------------------------");
             System.out.printf("Введите дробное число: ");
-            
-            if (input.hasNextFloat() && !input.hasNextInt() ){
+
+            if (input.hasNextFloat() && !input.hasNextInt()) {
                 res = input.nextFloat();
 
                 input.close();
                 isNotGetted = false;
-            }else{
-                System.out.println("Вы должны ввести дробное число!(Число с плавающей точкой).\nПопробуйте снова!");
+            } else {
+                System.out.println("Вы должны ввести дробное число!(Число с плавающей запятой).\nПопробуйте снова!");
                 input.next();
             }
         }
 
         return res;
-        
+
     }
 }
